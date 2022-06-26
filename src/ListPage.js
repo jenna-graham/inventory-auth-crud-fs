@@ -2,6 +2,6 @@ import React from 'react';
 
 export default function ListPage() {
   return (
-    <div>ListPage</div>
+    <div className='list-page'>ListPage</div>
   );
 }

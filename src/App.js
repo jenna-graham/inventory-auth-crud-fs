@@ -5,13 +5,17 @@ import {
   Link,
   Redirect
 } from 'react-router-dom';
+import { useState } from 'react';
 import './App.css';
 import AuthPage from './AuthPage';
 import CreatePage from './CreatePage';
 import UpdatePage from './UpdatePage';
 import ListPage from './ListPage';
+import { client } from './services/client';
+
 
 function App() {
+  const [user, setUser] = useState(client.auth.user());
   return (
     <Router>
       <div>
@@ -36,7 +40,12 @@ function App() {
         </nav>
         <Switch>
           <Route exact path="/">
-            <AuthPage />
+            {
+              !user
+                ? <AuthPage setUser={setUser}/>
+                : <Redirect to="/books" />
+            }
+            
           </Route>
           <Route exact path="/books/:id">
             <UpdatePage />
