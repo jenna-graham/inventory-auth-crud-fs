@@ -17,6 +17,7 @@ import { signOut } from './services/fetch-utils';
 
 function App() {
   const [user, setUser] = useState(client.auth.user());
+  console.log(user);
 
   async function handleSignOutClick() {
     await signOut();
@@ -32,7 +33,7 @@ function App() {
               <Link to="/">Sign In</Link>
             </li>
             <li>
-              <Link to="/create">Create New Book</Link>
+              <Link to="/create">Add New Book</Link>
             </li>
             <li>
               <Link to="/books/1">Update a book</Link>
