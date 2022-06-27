@@ -30,14 +30,14 @@ function App() {
         <nav className='nav'>
           <ul>
             <li>
-              <Link to="/">Sign In</Link>
+              <Link to="/">Home</Link>
             </li>
             <li>
               <Link to="/create">Add New Book</Link>
             </li>
-            <li>
+            {/* <li>
               <Link to="/books/1">Update a book</Link>
-            </li>
+            </li> */}
             <li>
               <Link to="/books">List of Books</Link>
             </li>

@@ -1,12 +1,14 @@
 import React from 'react';
 import { useState } from 'react';
 import { addBook } from './services/fetch-utils';
+import { useHistory } from 'react-router-dom';
 
 export default function CreatePage() {
   const [title, setTitle] = useState('');
   const [author, setAuthor] = useState('');
   const [genre, setGenre] = useState('');
   const [pages, setPages] = useState('');
+  const { push } = useHistory();
 
   async function handleSubmit(e) {
     e.preventDefault();
@@ -22,6 +24,8 @@ export default function CreatePage() {
     setAuthor('');
     setGenre('');
     setPages('');
+
+    push('/books');
 
   }
   return (
