@@ -12,10 +12,17 @@ import CreatePage from './CreatePage';
 import UpdatePage from './UpdatePage';
 import ListPage from './ListPage';
 import { client } from './services/client';
+import { signOut } from './services/fetch-utils';
 
 
 function App() {
   const [user, setUser] = useState(client.auth.user());
+
+  async function handleSignOutClick() {
+    await signOut();
+    setUser('');
+    
+  }
   return (
     <Router>
       <div>
@@ -34,7 +41,8 @@ function App() {
               <Link to="/books">List of Books</Link>
             </li>
             <li>
-        
+              {user && 
+             <button onClick={handleSignOutClick}>Logout</button>}
             </li>
           </ul>
         </nav>
@@ -51,7 +59,11 @@ function App() {
             <UpdatePage />
           </Route>
           <Route path="/books">
-            <ListPage />
+            {
+              user 
+                ? <ListPage /> 
+                : <Redirect to="/" />
+            }
           </Route>
           <Route exact path="/create">
             <CreatePage />
