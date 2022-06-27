@@ -1,9 +1,14 @@
 import { client } from './client';
+export async function getBooks() {
+  const { data, error } = await client.from('Books').select('*');
+  
+  return data;
+
+}
 
 export async function addBook(book) {
-  console.log(book);
+  
   const { data, error } = await client.from('Books').insert(book).single();
-  console.log(error);
   return data;
 }
 export async function signUp(email, password) {
@@ -23,6 +28,5 @@ export async function signIn(email, password) {
       
 }
 export async function signOut() {
-  console.log('logged out');
   const { error } = await client.auth.signOut();
 }
