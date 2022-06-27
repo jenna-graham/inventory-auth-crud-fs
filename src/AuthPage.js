@@ -15,16 +15,18 @@ export default function AuthPage({ setUser }) {
     const user = await signUp(signUpEmail, signUpPassword);
     setUser(user);
   }
+
   async function handleSignInSubmit(e) {
     e.preventDefault();
 
     const user = await signUp(signInEmail, signInPassword);
     setUser(user);
   }
+
+
   return (
     <div className='auth'><h3>Rainy Day Reader</h3>
       <div className='auth-form'>
-      
         <form onSubmit={handleSignUpSubmit} > 
           <p><b>Sign Up:</b></p>
           <label>email:

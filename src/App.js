@@ -25,8 +25,8 @@ function App() {
   }
   return (
     <Router>
-      <div>
-        <nav>
+      <div className='App'>
+        <nav className='nav'>
           <ul>
             <li>
               <Link to="/">Sign In</Link>
@@ -42,18 +42,18 @@ function App() {
             </li>
             <li>
               {user && 
-             <button onClick={handleSignOutClick}>Logout</button>}
+            <button className="logout-button" onClick={handleSignOutClick}>Logout</button>}
             </li>
           </ul>
         </nav>
+        
         <Switch>
           <Route exact path="/">
             {
               !user
                 ? <AuthPage setUser={setUser}/>
                 : <Redirect to="/books" />
-            }
-            
+            }   
           </Route>
           <Route exact path="/books/:id">
             <UpdatePage />
@@ -70,9 +70,7 @@ function App() {
           </Route>
         </Switch>
       </div>
-
     </Router>
-     
   );
 }
 
