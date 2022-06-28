@@ -47,9 +47,7 @@ function App() {
             <UpdatePage />
           </Route>
           <Route path="/books">{user ? <ListPage /> : <Redirect to="/" />}</Route>
-          <Route exact path="/create">
-            <CreatePage />
-          </Route>
+          <Route exact path="/create">{user ? <CreatePage /> : <Redirect to="/" />}</Route>
         </Switch>
       </div>
     </Router>
