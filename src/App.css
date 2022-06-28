@@ -1,38 +1,79 @@
 .App {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
+  text-align: start;
+}
+nav {
+  background-color: rgba(31, 41, 65, 0.575);
+  height: 100vh;
+  display: flex;
+  align-items: center;
+  padding-right: 30px;
+}
+a:link {
+  cursor: pointer;
+  color: black;
+  font-size: 1.2rem;
+}
+
+li {
+  padding: 5px;
+  background-color: rgba(22, 22, 22, 0.351);
+  border: 1px solid;
+  border-radius: 10px;
+  margin: 10px;
+  text-align: center;
+  
+}
+.logout-button {
+  width: 150px;
+  height: 25px;
+  border-radius: 5px;
+}
+
+.auth {
   text-align: center;
 }
-
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
+.auth-form {
+  display: flex;
+  text-align: center;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
 }
-
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
+li {
+  list-style: none;
 }
-
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
+form {
+  border: 2px solid;
+  height: 350px;
+  width: 300px;
   display: flex;
   flex-direction: column;
   align-items: center;
   justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
+  margin: 10px;
+  text-align: center;
+}
+.auth-button {
+  width: 150px;
+  height: 25px;
+  margin-top: 10px;
+}
+.list-page {
+  display: flex;
+  flex-direction: row;
+  margin-left: 30px;
+}
+.book {
+  border: 3px solid;
+  margin: 20px;
+  width: 200px;
+  height: 250px;
+  text-align: center;
+  flex-wrap: wrap;
 }
 
-.App-link {
-  color: #61dafb;
-}
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
-}
